@@ -5,16 +5,16 @@ Page({
    */
   data: {
     indexNav:0,
-    navList:[]
+    navList:[],
+    swiperList:[]
   },
 
   activeNav:function(e){
     this.setData({
       indexNav:e.target.dataset.index
     });
-    console.log(e);
   },
-
+  //获取导航栏资源
   getNavList:function(){
     let that = this;
     wx.request({
@@ -24,7 +24,21 @@ Page({
           that.setData({
             navList:res.data.data.navlist
           });
-          console.log(that.data.navList);
+        }
+      }
+    })
+  },
+
+  //获取轮播图资源
+  getSwiperList:function(){
+    let that=this;
+    wx.request({
+      url: 'https://easy-mock.com/mock/5c1dfd98e8bfa547414a5278/bili/swiperList',
+      success(res){
+        if(res.data.code===0){
+          that.setData({
+            swiperList: res.data.data.swiperList
+          });
         }
       }
     })
@@ -35,6 +49,7 @@ Page({
    */
   onLoad: function (options) {
     this.getNavList();
+    this.getSwiperList();
   },
 
   /**
