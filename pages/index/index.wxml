@@ -1,3 +1,12 @@
 <view>
+  <!--头部-->
   <header></header>
+  <!--导航栏-->
+  <view class="nav_wrap">
+    <scroll-view class="nav" scroll-X>
+      <view class="nav_item {{index==indexNav?'active':''}}" bindtap="activeNav" data-index="{{index}}" wx:for="{{navList}}" wx:key="{{index}}">
+        {{item.text}}
+      </view>
+    </scroll-view>
+  </view>
 </view>

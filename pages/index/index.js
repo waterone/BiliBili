@@ -4,14 +4,37 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    indexNav:0,
+    navList:[]
+  },
+
+  activeNav:function(e){
+    this.setData({
+      indexNav:e.target.dataset.index
+    });
+    console.log(e);
+  },
+
+  getNavList:function(){
+    let that = this;
+    wx.request({
+      url: 'https://www.easy-mock.com/mock/5d590978d3185331448bb542/bilibili/navlist',
+      success(res){
+        if(res.data.code===0){
+          that.setData({
+            navList:res.data.data.navlist
+          });
+          console.log(that.data.navList);
+        }
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.getNavList();
   },
 
   /**

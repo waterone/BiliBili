@@ -1,0 +1,15 @@
+/*首页导航*/
+.nav{
+  white-space: nowrap;
+  padding: 5rpx 0;
+}
+.nav_item{
+  font-size: 30rpx;
+  padding: 20rpx 40rpx;
+  display: inline-block;
+  text-align: center;
+  color: rgb(255, 102, 102);
+}
+.nav_item.active{
+  border-bottom: 5rpx solid red;
+}
