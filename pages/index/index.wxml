@@ -19,4 +19,17 @@
       </swiper-item>
     </swiper>
   </view>
+  <!--视频列表-->
+  <view class="video">
+    <navigator class="video_item" wx:for="{{videosList}}" wx:key="{{index}}">
+      <view class="video_image">
+        <image mode="widthFix" src="{{item.imgSrc}}"></image>
+        <view class="video_info">
+          <view class="watch">阅：{{item.playCount}}</view>
+          <view class="read">评：{{item.commentCount}}</view>
+        </view>
+      </view>
+      <view class="video_desc">{{item.desc}}</view>
+    </navigator>
+  </view>
 </view>

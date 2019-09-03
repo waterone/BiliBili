@@ -6,7 +6,8 @@ Page({
   data: {
     indexNav:0,
     navList:[],
-    swiperList:[]
+    swiperList:[],
+    videosList:[]
   },
 
   activeNav:function(e){
@@ -45,11 +46,29 @@ Page({
   },
 
   /**
+   * 获取视频列表
+   */
+  getVideosList:function(){
+    let that=this;
+    wx.request({
+      url: 'https://easy-mock.com/mock/5c1dfd98e8bfa547414a5278/bili/videosList',
+      success(res){
+        if(res.data.code===0){
+          that.setData({
+            videosList: res.data.data.videosList
+          });
+        }
+      }
+    })
+  },
+
+  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.getNavList();
     this.getSwiperList();
+    this.getVideosList();
   },
 
   /**
