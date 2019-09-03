@@ -1,3 +1,13 @@
 <view class="main">  
   <header></header>
+  <view class="video">
+      <video src="{{setVideoInfo.videoSrc}}" controls></video>
+      <view class="video_text">{{setVideoInfo.videoTitle}}</view>
+      <view class="video_detail">
+        <text class="video_author">{{setVideoInfo.author}}</text>
+        <text class="video_watch">{{setVideoInfo.playCount}}次观看</text>
+        <text class="video_read">{{setVideoInfo.commentCount}}弹幕</text>
+        <text class="video_time">{{setVideoInfo.date}}</text>
+      </view>
+  </view>
 </view>

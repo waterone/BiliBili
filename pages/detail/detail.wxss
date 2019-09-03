@@ -1,1 +1,25 @@
 /* pages/detail/detail.wxss */
+.main{
+  padding: 10rpx;
+}
+.video{
+
+}
+.video video{
+  width: 100%;
+}
+.video_text{
+  font-size: 26rpx;
+}
+.video_detail{
+  color: #666;
+  font-size: 20rpx;
+  margin-top: 5rpx;
+}
+.video_detail .video_author{
+  color: rgb(0, 0, 0);
+  padding-right: 8rpx;
+}
+.video_detail .video_read{
+  padding:0 8rpx; 
+}
