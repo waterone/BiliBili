@@ -2,9 +2,7 @@
 .main{
   padding: 10rpx;
 }
-.video{
 
-}
 .video video{
   width: 100%;
 }
@@ -22,4 +20,29 @@
 }
 .video_detail .video_read{
   padding:0 8rpx; 
+}
+/*推荐视频*/
+.others{
+  padding:10rpx 0;
+  margin-top: 10rpx;
+}
+.others_item{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+.others_item image{
+  flex: 1;
+  border-radius: 10rpx;
+}
+.others_item .other_info{
+  flex: 2;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  color: #666;
+}
+.other_info .other_text{
+  color: pink;
 }

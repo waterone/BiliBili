@@ -10,4 +10,16 @@
         <text class="video_time">{{setVideoInfo.date}}</text>
       </view>
   </view>
+  <view class="others">
+    <navigator wx:for="{{setOthersList}}" wx:key="{{index}}" class="others_item">
+        <image src="{{item.imgSrc}}" mode="widthFix"></image>
+        <view class="other_info">
+          <view class="other_text">{{item.title}}</view>
+          <view class="other_detail">
+            <text>{{item.playMsg}}次阅读</text>
+            <text>{{item.commentCount}}评论</text>
+          </view>
+        </view>
+    </navigator>
+  </view>
 </view>

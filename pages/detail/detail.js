@@ -5,9 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    setVideoInfo:[]
+    setVideoInfo:[],
+    setOthersList:[]
   },
-
+  //获取视频播放数据
   getVideoInof:function(videoId){
     let that=this;
     wx.request({
@@ -22,12 +23,28 @@ Page({
     })
   },
 
+  //获取推荐视频的数据
+  getOthersList:function(videoId){
+    let that=this;
+    wx.request({
+      url: 'https://easy-mock.com/mock/5c1dfd98e8bfa547414a5278/bili/othersList?id='+videoId,
+      success(res){
+        if(res.data.code===0){
+          that.setData({
+            setOthersList:res.data.data.othersList
+          });
+        }
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     let videoId=options.id;
     this.getVideoInof(videoId);
+    this.getOthersList(videoId);
   },
 
   /**
