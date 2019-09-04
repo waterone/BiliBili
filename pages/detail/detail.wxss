@@ -46,3 +46,37 @@
 .other_info .other_text{
   color: pink;
 }
+
+/*评论*/
+comments{
+  margin-top: 10rpx;
+}
+.comment_item{
+  width: 100%;
+  padding: 10rpx;
+  border-bottom: 2rpx solid rgb(148, 141, 141);
+  display: flex;
+  justify-content: space-between;
+}
+.comment_item .comment_image{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.comment_image image{
+  width: 70%;
+  border-radius: 50%;
+}
+.comment_item .comment_info{
+  flex: 7;
+  font-size: 26rpx;
+}
+.comment_info .info_top{
+  padding-bottom: 10rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+.comment_info .info_top .time{
+  float: right;
+}
