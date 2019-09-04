@@ -1,5 +1,7 @@
 <view class="main">  
+<!--视频头部-->
   <header></header>
+  <!--视频播放-->
   <view class="video">
       <video src="{{setVideoInfo.videoSrc}}" controls></video>
       <view class="video_text">{{setVideoInfo.videoTitle}}</view>
@@ -10,6 +12,7 @@
         <text class="video_time">{{setVideoInfo.date}}</text>
       </view>
   </view>
+  <!--视频推荐-->
   <view class="others">
     <navigator wx:for="{{setOthersList}}" wx:key="{{index}}" class="others_item">
         <image src="{{item.imgSrc}}" mode="widthFix"></image>
@@ -21,5 +24,22 @@
           </view>
         </view>
     </navigator>
+  </view>
+  <view class="comments">
+    <view class="total">评论({{commentData.commentTotalCount}})</view>
+    <view class="comment_item" wx:for="{{commentData.commentList}}" wx:key="{{index}}">
+      <view class="comment_image">
+        <image src="{{item.userIconSrc}}" mode="widthFix"></image>
+      </view>
+      <view class="comment_info">
+        <view class="info_top">
+          <text class="user">{{item.username}}</text>
+          <text class="time">{{item.commentDate}}</text>
+        </view>
+        <view class="info_bottom">
+          <text class="text">{{item.commentInfo}}</text>
+        </view>
+      </view>
+    </view>
   </view>
 </view>

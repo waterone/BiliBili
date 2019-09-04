@@ -6,7 +6,8 @@ Page({
    */
   data: {
     setVideoInfo:[],
-    setOthersList:[]
+    setOthersList:[],
+    commentData:null
   },
   //获取视频播放数据
   getVideoInof:function(videoId){
@@ -39,12 +40,30 @@ Page({
   },
 
   /**
+   * 获取评论数据
+   */
+  getCommentData:function(videoId){
+    let that=this;
+    wx.request({
+      url: 'https://easy-mock.com/mock/5c1dfd98e8bfa547414a5278/bili/commentsList?id='+videoId,
+      success(res){
+        if(res.data.code===0){
+          that.setData({
+            commentData:res.data.data.commentData
+          });
+        }
+      }
+    })
+  },
+
+  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     let videoId=options.id;
     this.getVideoInof(videoId);
     this.getOthersList(videoId);
+    this.getCommentData(videoId);
   },
 
   /**
